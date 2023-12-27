@@ -105,3 +105,11 @@
 - Package scoped variables
     - Cannot use ":="
     - Can have unused variables
+### Programming Constructs
+## if else
+
+## switch case
+
+## for
+
+## func
