@@ -113,3 +113,6 @@
 ## for
 
 ## func
+- functions can have more than one return result
+- named results
+- anonymous functions
