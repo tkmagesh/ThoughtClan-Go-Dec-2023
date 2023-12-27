@@ -19,26 +19,25 @@ func main() {
 		fmt.Printf("Hi %s, Have a nice day!\n", userName)
 	}
 	greet("Magesh")
-}
 
-/* 2 parameters, no return results */
-/*
-func greetUser(firstName string, lastName string) {
-	fmt.Printf("Hi %s %s, Have a good day!\n", firstName, lastName)
-}
-*/
+	var greetUser func(string, string)
+	greetUser = func(firstName, lastName string) {
+		fmt.Printf("Hi %s %s, Have a good day!\n", firstName, lastName)
+	}
+	greetUser("Magesh", "Kuppan")
 
-func greetUser(firstName, lastName string) {
-	fmt.Printf("Hi %s %s, Have a good day!\n", firstName, lastName)
-}
+	var getGreetMsg func(string, string) string
+	getGreetMsg = func(firstName, lastName string) string {
+		return fmt.Sprintf("Hi %s %s, Have a good day!\n", firstName, lastName)
+	}
+	msg := getGreetMsg("Magesh", "Kuppan")
+	fmt.Print(msg)
 
-/* 2 parameters, 1 return result */
-func getGreetMsg(firstName, lastName string) string {
-	return fmt.Sprintf("Hi %s %s, Have a good day!\n", firstName, lastName)
-}
-
-/* 2 parameters, 2 return results  */
-func divide(x, y int) (quotient, remainder int) {
-	quotient, remainder = x/y, x%y
-	return
+	var divide func(int, int) (int, int)
+	divide = func(x, y int) (quotient, remainder int) {
+		quotient, remainder = x/y, x%y
+		return
+	}
+	q, r := divide(100, 7)
+	fmt.Printf("Dividing 100 by 7, quotient = %d and remainder = %d\n", q, r)
 }
