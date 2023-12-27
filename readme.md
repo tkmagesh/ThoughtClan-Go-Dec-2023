@@ -116,3 +116,7 @@
 - functions can have more than one return result
 - named results
 - anonymous functions
+- higher order functions (functions can be treated like data)
+    - assign functions as values to variables
+    - pass functions as arguments to other functions
+    - return functions as return values from other functions
