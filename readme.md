@@ -96,7 +96,7 @@
 - type aliases
     - byte (alias for uint8)
     - rune (alias for int32 / unicode code point)
-### Variable Declaration
+## Variable Declaration
 - Using "var" keyword
 - Using ":="
 - Function scoped variables
@@ -105,14 +105,14 @@
 - Package scoped variables
     - Cannot use ":="
     - Can have unused variables
-### Programming Constructs
-## if else
+## Programming Constructs
+### if else
 
-## switch case
+### switch case
 
-## for
+### for
 
-## func
+### func
 - functions can have more than one return result
 - named results
 - anonymous functions
@@ -120,3 +120,10 @@
     - assign functions as values to variables
     - pass functions as arguments to other functions
     - return functions as return values from other functions
+## Errors
+- values implementing "error" interface (Error() method)
+- The default value of any interface is nil
+- Creation
+    - errors.New()
+    - fmt.Errorf()
+- Errors are NOT thrown but returned
