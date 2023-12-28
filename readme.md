@@ -121,6 +121,7 @@
     - assign functions as values to variables
     - pass functions as arguments to other functions
     - return functions as return values from other functions
+- variadic functions
 ## Errors
 - values implementing "error" interface (Error() method)
 - The default value of any interface is nil
@@ -144,4 +145,10 @@
 ### Array
 - Fixed size typed collection
 ### Slice
+- Varying size typed collection
+- A slice is a pointer to an underlying array
+- use "append()" to add new items
+- use "len()" to get the # of items that are accessible from the underlying array
+- use "cap()" to get the memory allocated (initialized + uninitialized)
+![image slices](./images/slices.png)
 ### Map
