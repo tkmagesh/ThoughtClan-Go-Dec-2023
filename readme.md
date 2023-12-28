@@ -127,3 +127,15 @@
     - errors.New()
     - fmt.Errorf()
 - Errors are NOT thrown but returned
+## Deferred functions
+- Any common logic that need to executed when returned from a function can be encapsulated in a deferred function
+- functions whose execution is postponed until the current function exits
+- Prefix the function execution call with "defer" keyword
+- deferred functions are executed in the reverse order
+## Panic & Recovery
+### Panic
+- A panic is said to have occured when the application reaches a state where the application execution cannot proceed any further
+- When a panic occurs, the deferred function will be executed
+- Use "panic()" function to programmatically create a panic
+### Recovery
+- "recover()" function returns the error that resulted in a panic
