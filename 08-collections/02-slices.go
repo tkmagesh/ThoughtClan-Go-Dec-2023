@@ -46,6 +46,14 @@ func main() {
 
 	sort(nos)
 	fmt.Println(nos)
+
+	// duplicating a slice
+	dupNos := make([]int, len(nos))
+	copy(dupNos, nos)
+	fmt.Println(dupNos)
+	nos[0] = 7777
+	fmt.Println(nos)
+	fmt.Println(dupNos)
 }
 
 func sort(list []int) {
