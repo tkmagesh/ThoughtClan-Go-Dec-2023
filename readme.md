@@ -152,3 +152,6 @@
 - use "cap()" to get the memory allocated (initialized + uninitialized)
 ![image slices](./images/slices.png)
 ### Map
+- typed collection of key/value pairs
+- initialization can be done with make() function
+- use "delete()" to remove an item
