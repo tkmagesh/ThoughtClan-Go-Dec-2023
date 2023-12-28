@@ -32,6 +32,7 @@
     - No implicit type conversion
     - No exceptions (only errors)
     - No "try catch finally" constructs
+    - No reference types (everything is a value)
     - No pointer arithmatic
 - Performance
     - Equivalent to C++
