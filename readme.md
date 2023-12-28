@@ -140,3 +140,8 @@
 - Use "panic()" function to programmatically create a panic
 ### Recovery
 - "recover()" function returns the error that resulted in a panic
+## Collections
+### Array
+- Fixed size typed collection
+### Slice
+### Map
