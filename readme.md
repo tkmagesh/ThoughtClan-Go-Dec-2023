@@ -155,3 +155,37 @@
 - typed collection of key/value pairs
 - initialization can be done with make() function
 - use "delete()" to remove an item
+## Modularity
+### Module
+- any code that need to be versioned & deployed together
+- a folder with the "go.mod" file
+- go.mod
+    - manifest file for the module
+    - contains
+        - name of the module (typically the repo path)
+        - go runtime version targetted
+        - information about 3rd party dependencies
+### Package
+- internal organization module
+- typically folders
+### Commands
+- To create a module file
+    > go mod init [module_name]
+- To create a build of a module
+    > go build .
+- To execute a module
+    > go run .
+- To include a 3rd party dependency
+    > go get [module_name]
+- To update the go.mod file 
+    > go mod tidy
+- To download the dependencies (documented in the go.mod file)
+    > go mod download
+- To get the dependency graph
+    > go mod graph
+- To get the dependency graph of one module
+    > go mod why [module_name]
+- To install a 3rd party module as an executable (CLI tools) (installed in the $GOPATH/bin folder)
+    > go install [module_name]
+- Reference:
+    - https://go.dev/ref/mod
