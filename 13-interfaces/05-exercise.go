@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"sort"
 	"strings"
 )
 
@@ -83,6 +84,100 @@ func negate(predicate ProductPredicate) ProductPredicate {
 	}
 }
 
+/* Sorting */
+
+func (products Products) Len() int {
+	return len(products)
+}
+
+func (products Products) Less(i, j int) bool {
+	return products[i].Id < products[j].Id
+}
+
+func (products Products) Swap(i, j int) {
+	products[i], products[j] = products[j], products[i]
+}
+
+// sort by Name
+type ByName struct {
+	Products
+}
+
+func (byName ByName) Less(i, j int) bool {
+	return byName.Products[i].Name < byName.Products[j].Name
+}
+
+// sort by Cost
+type ByCost struct {
+	Products
+}
+
+func (byCost ByCost) Less(i, j int) bool {
+	return byCost.Products[i].Cost < byCost.Products[j].Cost
+}
+
+// sort by Units
+type ByUnits struct {
+	Products
+}
+
+func (byUnits ByUnits) Less(i, j int) bool {
+	return byUnits.Products[i].Units < byUnits.Products[j].Units
+}
+
+// sort by Category
+type ByCategory struct {
+	Products
+}
+
+func (byCategory ByCategory) Less(i, j int) bool {
+	return byCategory.Products[i].Category < byCategory.Products[j].Category
+}
+
+func (products Products) Sort(attrName string) {
+	switch attrName {
+	case "Id":
+		sort.Sort(products)
+	case "Name":
+		sort.Sort(ByName{products})
+	case "Cost":
+		sort.Sort(ByCost{products})
+	case "Units":
+		sort.Sort(ByUnits{products})
+	case "Category":
+		sort.Sort(ByCategory{products})
+	default:
+		sort.Sort(products)
+	}
+}
+
+func (products Products) Sort2(attrName string) {
+	switch attrName {
+	case "Id":
+		sort.Slice(products, func(i int, j int) bool {
+			return products[i].Id < products[j].Id
+		})
+	case "Name":
+		sort.Slice(products, func(i int, j int) bool {
+			return products[i].Name < products[j].Name
+		})
+	case "Cost":
+		sort.Slice(products, func(i int, j int) bool {
+			return products[i].Cost < products[j].Cost
+		})
+	case "Units":
+		sort.Slice(products, func(i int, j int) bool {
+			return products[i].Units < products[j].Units
+		})
+	case "Category":
+		sort.Slice(products, func(i int, j int) bool {
+			return products[i].Category < products[j].Category
+		})
+	default:
+		sort.Sort(products)
+	}
+}
+
 func main() {
 
 	products := Products{
@@ -135,4 +230,29 @@ func main() {
 	}
 	stationaryProducts := products.Filter(stationaryProductPredicate)
 	fmt.Println(stationaryProducts)
+
+	fmt.Println("Sort by Id")
+	products.Sort2("Id")
+	// sort.Sort(products)
+	fmt.Println(products)
+
+	fmt.Println("Sort by Name")
+	// sort.Sort(ByName{products})
+	products.Sort2("Name")
+	fmt.Println(products)
+
+	fmt.Println("Sort by Cost")
+	// sort.Sort(ByCost{products})
+	products.Sort("Cost")
+	fmt.Println(products)
+
+	fmt.Println("Sort by Units")
+	// sort.Sort(ByUnits{products})
+	products.Sort("Units")
+	fmt.Println(products)
+
+	fmt.Println("Sort by Category")
+	// sort.Sort(ByCategory{products})
+	products.Sort("Category")
+	fmt.Println(products)
 }
