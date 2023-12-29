@@ -189,3 +189,7 @@
     > go install [module_name]
 - Reference:
     - https://go.dev/ref/mod
+
+## Structs
+- Class like construct
+- Values
