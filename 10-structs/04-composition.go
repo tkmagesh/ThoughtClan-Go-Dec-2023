@@ -33,6 +33,9 @@ func main() {
 	// fmt.Println(grapes.Product.Id, grapes.Product.Name, grapes.Product.Cost, grapes.Expiry)
 
 	// use the Format & ApplyDiscount functions for grapes (do not change the functions)
+	fmt.Println(Format(grapes.Product))
+	ApplyDiscount(&grapes.Product, 10)
+	fmt.Println(Format(grapes.Product))
 }
 
 func Format(product Product) string {
