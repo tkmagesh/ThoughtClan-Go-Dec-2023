@@ -26,7 +26,7 @@ func sum(args ...any) int {
 		case int:
 			result += val
 		case string:
-			if no, err := strconv.Atoi(val); err != nil {
+			if no, err := strconv.Atoi(val); err == nil {
 				result += no
 			}
 		case []any:
