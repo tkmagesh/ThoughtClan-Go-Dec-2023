@@ -37,6 +37,19 @@ func main() {
 	fmt.Println((*markerPtr).Id)
 	fmt.Println(markerPtr.Id)
 
+	stapler := NewProduct(104, "Stapler", 75)
+	fmt.Println(stapler)
+
+}
+
+// Factory function for the product
+// Encapsulates the complexity of constructing a product object
+func NewProduct(id int, name string, cost float32) *Product {
+	return &Product{
+		Id:   id,
+		Name: name,
+		Cost: cost,
+	}
 }
 
 func Format(product Product) string {
