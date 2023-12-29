@@ -193,3 +193,8 @@
 ## Structs
 - Class like construct
 - Values
+
+## Methods
+- Functions with receivers
+- Both the struct definition and the method definition must be in the same package
+- Use type aliasing for defining methods on structs that are not local

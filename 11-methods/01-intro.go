@@ -33,7 +33,8 @@ func main() {
 	fmt.Println(marker.Format())
 
 	fmt.Println("After applying 10% discount on marker")
-	ApplyDiscount(&marker, 10)
+	// ApplyDiscount(&marker, 10)
+	marker.ApplyDiscount(10)
 	// fmt.Println(Format(marker))
 	fmt.Println(marker.Format())
 
@@ -70,6 +71,6 @@ func (product Product) Format() string {
 	return fmt.Sprintf("Id = %d, Name = %q, Cost = %0.2f", product.Id, product.Name, product.Cost)
 }
 
-func ApplyDiscount(product *Product, discountPercentage float32) {
+func (product *Product) ApplyDiscount(discountPercentage float32) {
 	product.Cost = product.Cost * ((100 - discountPercentage) / 100)
 }
