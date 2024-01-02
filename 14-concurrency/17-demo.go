@@ -28,7 +28,7 @@ func timeout(d time.Duration) <-chan time.Time {
 }
 */
 
-func genFib(timeoutCh chan time.Time) <-chan int {
+func genFib(timeoutCh <-chan time.Time) <-chan int {
 	ch := make(chan int)
 	go func() {
 	LOOP:
