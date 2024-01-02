@@ -198,3 +198,32 @@
 - Functions with receivers
 - Both the struct definition and the method definition must be in the same package
 - Use type aliasing for defining methods on structs that are not local
+
+## Concurrency
+- Concurrent operations are called goroutines (any function invocation prefixed with the "go" keyword)
+- Communication (Channels)
+    - Declaration
+    ```
+        var [var_name] chan [data_type]
+        ex: 
+            var ch chan int
+    ```
+    - Instantiation (use make() function)
+    ```
+        ch = make(chan int)
+    ```
+    - Operations (using channel operator "<-" )
+        - Send
+        ```
+            ch <- 100
+        ```
+        - Receive
+        ```
+            data := <- ch
+            OR
+            fmt.Println(<- ch)
+        ```
+    - Behaviors
+        - A "Receive" operation is ALWAYS a blocking operation
+        - A "Send" operation is blocked until a "Receive" operation is initiated
+    ![image](./images/channel-behaviors.png)
