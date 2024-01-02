@@ -5,6 +5,7 @@ import (
 	"time"
 )
 
+// consumer
 func main() {
 	/*
 		var ch chan int
@@ -16,6 +17,7 @@ func main() {
 	fmt.Println(result)
 }
 
+// producer
 func add(x, y int, ch chan int) {
 	time.Sleep(3 * time.Second)
 	result := x + y
