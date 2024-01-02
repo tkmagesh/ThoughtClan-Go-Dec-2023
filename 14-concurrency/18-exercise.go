@@ -14,7 +14,8 @@ func main() {
 	fmt.Println("Hit ENTER to stop...")
 	go func() {
 		fmt.Scanln()
-		stopCh <- struct{}{}
+		// stopCh <- struct{}{}
+		close(stopCh)
 	}()
 	primeCh := genPrimes(stopCh)
 	for no := range primeCh {

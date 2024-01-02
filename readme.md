@@ -227,3 +227,6 @@
         - A "Receive" operation is ALWAYS a blocking operation
         - A "Send" operation is blocked until a "Receive" operation is initiated
     ![image](./images/channel-behaviors.png)
+- To detect data races
+    - > go build -race [program.go]
+    - > go run -race [program.go]
