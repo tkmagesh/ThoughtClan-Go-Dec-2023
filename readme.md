@@ -230,3 +230,7 @@
 - To detect data races
     - > go build -race [program.go]
     - > go run -race [program.go]
+
+## Tools
+- https://github.com/rakyll/gotest
+- To generate mocks (https://vektra.github.io/mockery/)

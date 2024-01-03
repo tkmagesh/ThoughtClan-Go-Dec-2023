@@ -4,11 +4,10 @@ import (
 	"testing"
 )
 
-/*
 func Test_IsPrime_71(t *testing.T) {
 	// Arrange
 	no := 71
-	expectedResult := true
+	expectedResult := false
 
 	//Act
 	actualResult := IsPrime(no)
@@ -16,13 +15,14 @@ func Test_IsPrime_71(t *testing.T) {
 	//Assert
 	if actualResult != expectedResult {
 
-			// t.Logf("IsPrime(%d) = %t, but got %t\n", no, expectedResult, actualResult)
-			// t.Fail()
+		// t.Logf("IsPrime(%d) = %t, but got %t\n", no, expectedResult, actualResult)
+		// t.Fail()
 
 		t.Errorf("IsPrime(%d) = %t, but got %t\n", no, expectedResult, actualResult)
 	}
 }
 
+/*
 func Test_IsPrime_97(t *testing.T) {
 	// Arrange
 	no := 97

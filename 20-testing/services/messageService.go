@@ -1,3 +1,4 @@
+//go:generate mockery --name MessageService
 package services
 
 type MessageService interface {

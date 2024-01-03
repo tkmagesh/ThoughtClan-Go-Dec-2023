@@ -2,7 +2,7 @@ package services
 
 import (
 	"testing"
-	mocks "testing-app/mocks/services"
+	mocks "testing-app/mocks"
 )
 
 //custom Mock implementation
