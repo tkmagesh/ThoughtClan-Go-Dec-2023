@@ -1,11 +1,7 @@
 package main
 
 import (
-	"context"
-	"fmt"
 	"net/http"
-
-	"github.com/google/uuid"
 )
 
 type Middleware func(http.HandlerFunc) http.HandlerFunc
@@ -37,20 +33,5 @@ func (myServer *MyServer) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 func NewMyServer() *MyServer {
 	return &MyServer{
 		routes: make(map[string]http.HandlerFunc),
-	}
-}
-
-func LoggerMiddleware(handler http.HandlerFunc) http.HandlerFunc {
-	return func(w http.ResponseWriter, r *http.Request) {
-		fmt.Printf("%s - %s\n", r.Method, r.URL.Path)
-		handler(w, r)
-	}
-}
-
-func TraceIdMiddleware(handler http.HandlerFunc) http.HandlerFunc {
-	return func(w http.ResponseWriter, r *http.Request) {
-		reqId := uuid.New()
-		valCtx := context.WithValue(r.Context(), "request-id", reqId)
-		handler(w, r.WithContext(valCtx))
 	}
 }

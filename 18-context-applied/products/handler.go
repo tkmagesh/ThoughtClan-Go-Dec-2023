@@ -2,12 +2,17 @@ package products
 
 import (
 	"encoding/json"
-	"fmt"
+
 	"net/http"
+
+	log "github.com/sirupsen/logrus"
 )
 
 func Handler(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("[products.handler] req id :", r.Context().Value("request-id"))
+	log.WithFields(log.Fields{
+		"req-id": r.Context().Value("request-id"),
+	}).Info("[Products Handler]")
+
 	ps := NewProductsService()
 	switch r.Method {
 	case http.MethodGet:
